@@ -87,9 +87,33 @@ File tree now looks like this:
 5. In the code any instance where a database engine is created replace it with 'postgresql://catalog:password@localhost/catalog'
 6. Any instance in the code where "client_secret.json" is referenced replace with '/var/www/Catalog/Catalog/client_secret.json'
 
+## Step 7: Create VirtualHost in Apache2
+1. Create configuration for your app "sudo vi /etc/apache2/sites-available/Catalog.conf"
+2. Copy and paste this code into file:
+  <VirtualHost *:80>
+                ServerName 100.25.61.195.xip.io
+                ServerAdmin ubuntu@100.25.61.195
+                ServerAlias ec2-100-25-61-195.compute-1.amazonaws.com
+                WSGIScriptAlias / /var/www/Catalog/catalog.wsgi
+                <Directory /var/www/Catalog/Catalog/>
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+                Alias /static /var/www/Catalog/Catalog/static
+                <Directory /var/www/Catalog/Catalog/static/>
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+                ErrorLog ${APACHE_LOG_DIR}/error.log
+                LogLevel warn
+                CustomLog ${APACHE_LOG_DIR}/access.log combined
+   </VirtualHost>*         
+3. Enable the project: "sudo a2ensite Catalog.conf"
 
-## Step 7: Modify Google Oauth
 
+
+## Step 8: Modify Google Oauth
+1. 
 
 
 
