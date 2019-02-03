@@ -115,7 +115,18 @@ File tree now looks like this:
 
 
 ## Step 8: Modify Google Oauth
-1. 
+1. Add 'xip.io' to you Authorized Domains
+2. In Authorized Javascript add 'http://100.25.61.195.xip.io/'
+3. In Authorized Redirect Urls add:
+
+         http://100.25.61.195.xip.io/gconnect	
+         http://100.25.61.195.xip.io/oauth2callback	
+         http://100.25.61.195.xip.io/login
+4. Download JSON and replace client_secret.json with newly constructed JSON
+
+## Step 9: Restart and Test
+1. Restart Apache: "sudo service apache2 restart"
+2. Navigate to http://100.25.61.195.xip.io/ and begin testing
 
 External Resources:
 1. https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
