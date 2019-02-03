@@ -69,15 +69,15 @@ application.secret_key = 'secret key'
 
 File tree now looks like this:
 
-|----Catalog
+    |----Catalog
     |---------catalog.wsgi
-|---------Catalog
-|--------------static
-|--------------templates
-|--------------__init__.py
-|--------------database_setup.py
-|--------------populate_database.py
-|--------------venv
+    |---------Catalog
+    |--------------static
+    |--------------templates
+    |--------------__init__.py
+    |--------------database_setup.py
+    |--------------populate_database.py
+    |--------------venv
 
 ## Step 6: Create database and modify code
 1. Install packages: "sudo apt-get install libq-dev python-dev" "sudo apt-get install postgresql postgresql-contrib"
