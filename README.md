@@ -14,6 +14,7 @@ http://100.25.61.195.xip.io/
 2. Create Instance/ OS Only/ Ubuntu distribution
 3. Login to instance through SSH
 4. "sudo apt-get update" to update packages
+5. To set up unattended-upgrades: "sudo apt-get install unattended-upgrades" "sudo dpkg-reconfigure unattended-upgrades"
 
 ## Step 2: Change port and configure firewall
 1. "sudo vi /etc/ssh/sshd_config"
