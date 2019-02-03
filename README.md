@@ -64,7 +64,7 @@ application.secret_key = 'secret key'
 8. Rename application.py to __init__.py: "mv application.py __init__.py"
 ### Install virtual environment 
 9. "cd Catalog"
-10. "sudo pip install virtualenv" "sudo virtualenv venv" "source venv/bin/activate"
+10. Install virutal environment and connect to it "sudo pip install virtualenv" "sudo virtualenv venv" "source venv/bin/activate" "sudo chmod -R 777 venv"
 11. Install all required packages for running the project e.g. sqlalchemy
 12. "deactivate" to exit venv
 
