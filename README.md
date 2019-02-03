@@ -84,6 +84,8 @@ File tree now looks like this:
 2. Open postgres console "sudo su - postgres psql"
 3. "CREATE USER catalog WITH PASSWORD 'password';"
 4. "CREATE DATABASE catalog WITH OWNER catalog;"
+5. In the code any instance where a database engine is created replace it with 'postgresql://catalog:password@localhost/catalog'
+6. Any instance in the code where "client_secret.json" is referenced replace with '/var/www/Catalog/Catalog/client_secret.json'
 
 
 ## Step 7: Modify Google Oauth
