@@ -90,7 +90,8 @@ File tree now looks like this:
 ## Step 7: Create VirtualHost in Apache2
 1. Create configuration for your app "sudo vi /etc/apache2/sites-available/Catalog.conf"
 2. Copy and paste this code into file:
-  <VirtualHost *:80>
+
+        <VirtualHost *:80>
                 ServerName 100.25.61.195.xip.io
                 ServerAdmin ubuntu@100.25.61.195
                 ServerAlias ec2-100-25-61-195.compute-1.amazonaws.com
@@ -107,7 +108,8 @@ File tree now looks like this:
                 ErrorLog ${APACHE_LOG_DIR}/error.log
                 LogLevel warn
                 CustomLog ${APACHE_LOG_DIR}/access.log combined
-   </VirtualHost>*         
+        </VirtualHost>  
+
 3. Enable the project: "sudo a2ensite Catalog.conf"
 
 
