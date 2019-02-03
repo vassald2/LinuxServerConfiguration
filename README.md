@@ -9,10 +9,33 @@ http://100.25.61.195.xip.io/
  
 # Steps taken to complete project
  
-## Step 1: Create LightSail Instance
+## Step 1: Create Lightsail Instance
 1. Navigate to Amazon Lightsail 
 2. Create Instance/ OS Only/ Ubuntu distribution
 3. Login to instance through SSH
 4. "sudo apt-get update" to update packages
+
+## Step 2: Change port and configure firewall
+1. sudo vi /etc/ssh/sshd_config
+2. Locate the line that says "Port 22" and change to "Port 2200"
+3. sudo service sshd restart 
+4. In Lightsail, go to the Networking tab for your instance and add a custom rule to access port 2200 over TCP and 123 over UDP
+#### For Updating Firewall
+5. sudo ufw allow ssh
+6. sudo ufw allow 2200
+7. sudo ufw allow http
+8. sudo apt-get install ntp
+9. sudo ufw allow 123/udp
+10. sudo ufw enable
+
+## Step 3: Give Grader Access
+1. sudo adduser grader
+2. sudo visudo
+3. Add "grader ALL=(ALL:ALL) ALL" under the line that says "root ALL=(ALL:ALL) ALL"
+4. In your server create a new directory and file to store your newly created public key e.g. mkdir .ssh sudo touch .ssh/authorized_keys
+5. On your local machine use ssh-keygen to create a key pair
+6. Paste  your newly created public key to the .ssh/authorized_keys file we created
+7. Make sure you're logged in as grader and run "sudo chmod 700 .ssh" "sudo chmod 644 .ssh/authorized_keys" "sudo service ssh restart"
+8. Login as grader using your private key to ensure it worked
 
 
