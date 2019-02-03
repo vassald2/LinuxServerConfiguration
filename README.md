@@ -38,4 +38,7 @@ http://100.25.61.195.xip.io/
 7. Make sure you're logged in as grader and run "sudo chmod 700 .ssh" "sudo chmod 644 .ssh/authorized_keys" "sudo service ssh restart"
 8. Login as grader using your private key to ensure it worked
 
-
+## Step 4: Change Time Zone
+1. sudo dpkg-reconfigure tzdata
+2. "None of the above"
+3. "UTC"
