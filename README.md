@@ -10,9 +10,9 @@ http://100.25.61.195.xip.io/
 # Steps taken to complete project
  
 ## Step 1: Create LightSail Instance
-> Navigate to Amazon Lightsail 
-> Create Instance/ OS Only/ Ubuntu distribution
-> Login to instance through SSH
-> "sudo apt-get update" to update packages
+1. Navigate to Amazon Lightsail 
+2. Create Instance/ OS Only/ Ubuntu distribution
+3. Login to instance through SSH
+4. "sudo apt-get update" to update packages
 
 
