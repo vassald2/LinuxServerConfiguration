@@ -60,7 +60,33 @@ sys.path.insert(0,"/var/www/Catalog/")
 from Catalog import app as application
 application.secret_key = 'secret key'
 
-8. 
+8. Rename application.py to __init__.py: "mv application.py __init__.py"
+### Install virtual environment 
+9. "cd Catalog"
+10. "sudo pip install virtualenv" "sudo virtualenv venv" "source venv/bin/activate"
+11. Install all required packages for running the project e.g. sqlalchemy
+12. "deactivate" to exit venv
+
+File tree now looks like this:
+
+|----Catalog
+    |---------catalog.wsgi
+|---------Catalog
+|--------------static
+|--------------templates
+|--------------__init__.py
+|--------------database_setup.py
+|--------------populate_database.py
+|--------------venv
+
+## Step 6: Create database and modify code
+1. Install packages: "sudo apt-get install libq-dev python-dev" "sudo apt-get install postgresql postgresql-contrib"
+2. Open postgres console "sudo su - postgres psql"
+3. "CREATE USER catalog WITH PASSWORD 'password';"
+4. "CREATE DATABASE catalog WITH OWNER catalog;"
+
+
+## Step 7: Modify Google Oauth
 
 
 
